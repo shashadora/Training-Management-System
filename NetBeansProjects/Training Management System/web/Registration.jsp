@@ -1,34 +1,19 @@
-<%-- 
-    Document   : Registration
-    Created on : Nov 25, 2014, 9:20:15 AM
-    Author     : Asus
---%>
 
+<%@include file = "dbConnect.jsp" %>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="Dashboard">
-        <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-
+        <%@include file = "bootstrap.jsp" %>
         <title>Registration</title>
 
-        <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <!--external css-->
-        <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
-        
-        <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/style-responsive.css" rel="stylesheet">
     </head>
     <body>
-         <div class="container">
+        <h3>Registration Form</h3>
+        <div class="container">
     <div class="row">
-         <form method="post" action="register.jsp">
+         <form method="post" action="Registration.jsp">
             <div class="col-lg-6">
                 <div class="well well-sm"><strong><span class="glyphicon glyphicon-asterisk"></span>Required Field</strong></div>
                 <div class="form-group">
@@ -53,9 +38,9 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="uName">Username</label>
+                    <label for="userName">Username</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="uName" id="uName" placeholder="Username" required>
+                        <input type="text" class="form-control" name="userName" id="userName" placeholder="Username" required>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                     </div>
                 </div>
@@ -72,5 +57,46 @@
         </form>
     </div>
     </div>
+        
     </body>
+ 
 </html>
+<%
+    String firstName = request.getParameter("firstName");    
+    String lastName = request.getParameter("lastName");
+    String userName = request.getParameter("userName");
+    String password = request.getParameter("password");
+    String email = request.getParameter("email");
+    
+    int i = 0;
+    if(firstName != null && lastName != null && userName!=null && password!=null && email!=null)
+    {
+	try {
+                String checkEmail = "SELECT email FROM user";
+                
+        	//Connection con = DriverManager.getConnection(url, user, password);
+        	PreparedStatement register = null;
+        	int updateQuery = 0;
+
+                String queryString = "INSERT INTO user(firstName, lastName, email, username, " +
+                                        "password) VALUES (?, ?, ?, ?, ?)";
+                /* createStatement() is used for create statement object that is used for 
+			 sending sql statements to the specified database. */
+		register = con.prepareStatement(queryString);
+		register.setString(1, firstName);
+		register.setString(2, lastName);
+		register.setString(3, email);
+		register.setString(4, userName);
+		register.setString(5, password);
+				
+                i = register.executeUpdate();
+	} catch (SQLException ex) {
+		System.err.println("SQLException: " + ex.getMessage() );
+	}
+    if (i > 0) {
+
+       response.sendRedirect("index.html");
+    } 
+    }
+%>
+
