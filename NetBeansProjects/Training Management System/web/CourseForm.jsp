@@ -3,7 +3,7 @@
     Created on : Nov 25, 2014, 9:54:27 AM
     Author     : user8
 --%>
-
+ <%@include file = "bootstrap.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,87 +22,100 @@
 </head>
 
 <body>
-<table width="409" border="1" align="center">
-  <tr>
-    <td colspan="2" align="center" bgcolor="#FF0000" class="a">Maklumat Kursus Yang Dipohon</td>
-  </tr>
-  <tr>
-    <td width="168">Course code:</td>
-    <td width="225"><form id="form1" name="form1" method="post" action="">
-      <label for="Course code"></label>
-      <label for="Course code3"></label>
-      <input type="text" name="Course code" id="Course code3" />
-    </form></td>
-  </tr>
-  <tr>
-    <td>Course name:</td>
-    <td><form id="form2" name="form2" method="post" action="">
-      <label for="Course name"></label>
-      <label for="Course name"></label>
-      <input type="text" name="Course name" id="Course name" />
-    </form></td>
-  </tr>
-  <tr>
-    <td>Start Date:</td>
-    <td><form id="form3" name="form3" method="post" action="">
-      <label for="Start Date"></label>
-      <input type="text" name="Start Date" id="Start Date" />
-    </form></td>
-  </tr>
-  <tr>
-    <td>End Date:      </td>
-    <td><label for="End Date"></label>
-    <input type="text" name="End Date" id="End Date" /></td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center" bgcolor="#FF0000" class="a">Information Details</td>
-  </tr>
-  <tr>
-    <td>Name:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Ic No:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Address:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Hp No:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Office No:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Email:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Faculty:</td>
-    <td bgcolor="#FFFFFF">&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Department:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Position Gred:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>Position:</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="2" align="center"><form id="form4" name="form4" method="post" action="">
-      <input type="submit" name="Apply Course" id="Apply Course" value="Apply Course" />
-      <input type="submit" name="Delete" id="Delete" value="Delete" />
-    </form></td>
-  </tr>
-</table>
+    
+    <div class="page-header">
+  <h1>Maklumat Kursus Yang Dipohon</h1>
+</div>
+    
+    <form role="form1">
+  <div class="form-group">
+    <label for="Course code">Course code:</label>
+    <label for="Course code3"></label>
+    <form id="form1" name="form1" method="post" action=""/>
+    <input type="text" name="Course code" id="Course code3" />
+  </div
+</form>
+    
+     <form role="form2">
+  <div class="form-group">
+    <label for="Course name">Course name:</label>
+    <label for="Course name"></label>
+    <form id="form1" name="form2" method="post" action=""/>
+    <input type="text" name="Course code" id="Course name" />
+  </div
+</form>
+    
+    <form role="form3">
+  <div class="form-group">
+    <label for="Start Date">Start Date:</label>
+    <label for="Start Date"></label>
+    <form id="form3" name="form3" method="post" action=""/>
+    <input type="text" name="Start Date" id="Start Date" />
+  </div
+</form>
+    
+    <form role="form4">
+  <div class="form-group">
+    <label for="End Date">End Date:</label>
+    <label for="End Date"></label>
+    <form id="form4" name="form4" method="post" action=""/>
+    <input type="text" name="End Date" id="End Date" />
+  </div
+</form>
+    
+    <div class="page-header">
+  <h1>Information Details</h1>
+</div
+
+<form role="form">
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="name" class="form-control" id="InputName" placeholder="Enter name">
+  </div>
+    
+  <div class="form-group">
+    <label for="InputAddress">Address:</label>
+    <input type="address" class="form-control" id="InputAddress" placeholder="Address">
+  </div>
+    
+  <div class="form-group">
+    <label for="InputHpNo">Hp No:</label>
+    <input type="HpNo" id="InputHpNo">
+        
+  <div class="form-group">
+    <label for="InputOfficeNo">Office No:</label>
+    <input type="OfficeNo" id="InputOfficeNo">
+        
+   <div class="form-group">
+    <label for="InputEmail">Email:</label>
+    <input type="Email" id="InputEmail">
+        
+   <div class="form-group">
+    <label for="InputFaculty">Faculty:</label>
+    <input type="Faculty" id="InputFaculty">
+        
+    <div class="form-group">
+    <label for="InputDepartment">Department:</label>
+    <input type="Department" id="InputDepartment">
+        
+    <div class="form-group">
+    <label for="InputPositionGred">Position Gred:</label>
+    <input type="PositionGred" id="InputPositionGred">
+        
+    <div class="form-group">
+    <label for="InputPosition">Position:</label>
+    <input type="Position" id="InputPosition">
+   
+</form>
+    
+
+  
+  <form id="form5" name="form5" method="post" action="">
+  <button type="button" class="btn btn-default navbar-btn">Apply Course</button>
+  <input type="submit" id="Apply Course" value="Apply Course" />
+  <button type="button" class="btn btn-default navbar-btn">Delete</button>
+  <input type="submit" id="Delete" value="Delete" />
+  </form></td>
+ 
 </body>
 </html>
