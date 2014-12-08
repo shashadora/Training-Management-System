@@ -58,7 +58,7 @@ body p {
       <blockquote>
         <blockquote>
           <blockquote>
-            <p><img src="file:///C|/img/apple-with-no-bg.jpg" width="222" height="158" class="a" /></p>
+            <p><img src="img/apple-with-no-bg.jpg" width="222" height="158" class="a" /></p>
           <span class="a">GREEN APPLE TRAINING MANAGEMENT SYSTEM</span></blockquote>
           <table width="795" height="189" border="1">
             <tr class="b">
