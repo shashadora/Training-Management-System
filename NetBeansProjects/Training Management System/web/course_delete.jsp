@@ -1,9 +1,5 @@
-<%-- 
-    Document   : delete
-    Created on : Dec 2, 2014, 10:37:48 AM
-    Author     : akob
---%>
-<%@include file = "../dbConnect.jsp" %>
+
+<%@include file = "dbConnect.jsp" %>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

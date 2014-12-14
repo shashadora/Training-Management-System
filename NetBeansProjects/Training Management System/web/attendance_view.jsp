@@ -1,26 +1,20 @@
-
-
+<%@include file = "header_admin.jsp" %>
+<%@include file = "bootstrap.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<%@include file= "adminHeader.jsp" %>
-<%@include file= "bootstrap.jsp" %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Manage Course</title>
+        <title>JSP Page</title>
     </head>
     <body>
-              <table class="table table-striped table-advance table-hover">
-	                  	  	  <h3><i class="fa fa-angle-right"></i>List Of Course</h3>
+          <table class="table table-striped table-advance table-hover">
+	                  	  	  <h3><i class="fa fa-angle-right"></i>Attendance</h3>
 	                  	  	  <hr>
                               <thead>
                               <tr>
                                   <th><i class="fa fa-bullhorn"></i> Index</th>
-                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Course Code</th>
-                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Course Name</th>
-                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Category</th>
-                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Start Date</th>
-                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> End Date</th>
+                                  <th class="hidden-phone"><i class="fa fa-question-circle"></i> Name</th>
                                   <th></th>
                               </tr>
                               </thead>
@@ -33,12 +27,6 @@
                                   </td>
                                   <td class="hidden-phone"></td>
                                   <td class="hidden-phone"></td>
-                                  <td class="hidden-phone"></td>
-                                  <td class="hidden-phone"></td>
-                                  <td class="hidden-phone"></td>
-                                  <td class="hidden-phone"></td>
-                                  
-                                  
                                   <td>
                                       <button class="btn btn-info">
                                         <%--<a href='salaryUpdate.jsp?salaryID= + <%=salaryID%> + '>--%> 
@@ -52,14 +40,6 @@
                               </tbody>
                           </table>
                           
-                              <table>
-                                  <tr>
-                                      
-                                  <a href="addCourse.jsp"><button class="btn btn-primary"  type="submit">Add New Course </button></a>
-                                      
-                                  </tr>
-                              </table>
-                         
-    </body>
+                              
     </body>
 </html>

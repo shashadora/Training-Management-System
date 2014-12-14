@@ -10,10 +10,10 @@
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-        <li><a href="index.jsp">Home</a></li>
-        <li><a href="applyCourse.jsp">Apply Course</a></li>
-        <li><a href="viewProfile.jsp">View Profile</a></li>
-        <li><a href="viewStatus.jsp">View Status</a></li>
+        <li><a href="index_staff.jsp">Home</a></li>
+        <li><a href="applyForCourse_new.jsp">Apply Course</a></li>
+        <li><a href="profile_view.jsp">View Profile</a></li>
+        <li><a href="applyForCourse_status.jsp">View Status</a></li>
         
     </ul>
        <ul class="nav navbar-nav navbar-right">

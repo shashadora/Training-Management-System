@@ -23,7 +23,7 @@
 
 	<div style="margin-left:25pt;">        
 	<h1>Your Profile</h1>
-	<form action="editProfile.jsp" method="post" style="display:inline;">
+	<form action="profile_edit.jsp" method="post" style="display:inline;">
 <%
 	String username = (String)session.getAttribute("username");
 

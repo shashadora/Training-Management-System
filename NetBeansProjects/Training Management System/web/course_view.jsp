@@ -1,25 +1,23 @@
-<%-- 
-    Document   : index
-    Created on : Dec 9, 2014, 8:41:56 AM
-    Author     : akob
---%>
-<%@include file = "../dbConnect.jsp" %>
+<%@include file="bootstrap.jsp" %>
+<%@include file = "dbConnect.jsp" %>
+<%@include file = "header_admin.jsp" %>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Courses</title>
     </head>
     <body>
-        <h1>Verify module</h1>
-        <table border="1">
+        <div class="container-fluid">
+        <h1>Courses </h1>
+        <table class="table table-striped table-advance table-hover">
             <thead>
                 <tr>
-                    <th>Course Code</th>
-                    <th>Title</th>
-                    <th>Dean Approval</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Course Code</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Title</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Dean Approval</th>
                     <th></th>
                 </tr>
             </thead>
@@ -39,16 +37,11 @@
                     out.println("<tr>");
                         out.println("<td>"+ courses_rs.getString("code")+"</td>");
                         out.println("<td>"+ courses_rs.getString("title")+"</td>");
-                        String dean_approval = "";
-                        if (courses_rs.getString("dean_approval") == null) {
-                            dean_approval = "Pending approval";
-                        }else if (courses_rs.getString("dean_approval").equals("1")){
-                            dean_approval = "Approved";
-                        }
-                        out.println("<td>"+ dean_approval +"</td>");
+                        out.println("<td>"+ courses_rs.getString("dean_approval")+"</td>");
                         String course_id = courses_rs.getString("id");
                         out.println("<td>");
-                            out.println("<a href='show.jsp?id="+course_id+"'>View</a>");
+                            out.println("<button class='btn btn-info'><a href='course_edit.jsp?id="+course_id+"'>Delete</a><i class='fa fa-edit'></i></button>");
+                            out.println("<button class='btn btn-warning'><a href='course_delete.jsp?id="+course_id+"'>Edit</a><i class='fa fa-trash'></i></button>");
                         out.println("</td>");
                     out.println("</tr>");
                 }
@@ -58,5 +51,9 @@
 %>
             </tbody>
         </table>
+        <a href="new.jsp"><button class="btn btn-primary"  type="submit">Add New Course </button></a>
+        </div>    
+            
+                                   
     </body>
 </html>
