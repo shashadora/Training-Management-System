@@ -45,9 +45,7 @@
             Course code : <input type="text" name="code"> <br>
             Title : <input type="text" name="title"> <br>
             Module : 
-            <textarea type="text" name="module">
-
-            </textarea>
+            <textarea type="text" name="module"></textarea>
  <br>
             <input type="submit" value="Save">
         </form>
