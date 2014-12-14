@@ -10,11 +10,13 @@
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-        <li><a href="#">Manage Course</a></li>
-        <li><a href="#">Advertise Course</a></li>
-        <li><a href="#">Generate Certificate</a></li>
-        <li><a href="#">Verify Application</a></li>
-        <li><a href="#">Generate Report</a></li>
+        <li><a href="adminIndex.jsp">Home</a></li>
+        <li><a href="manageCourse.jsp">Manage Course</a></li>
+        <li><a href="AdvertiseCourse.jsp">Advertise Course</a></li>
+        <li><a href="generateCertificate.jsp">Generate Certificate</a></li>
+        <li><a href="generateReport.jsp">Generate Report</a></li>
+        <li><a href="verifyApplication.jsp">Verify Application</a></li>
+        <li><a href="viewAttendance.jsp">View Attendance</a></li>
     </ul>
        <ul class="nav navbar-nav navbar-right">
      
