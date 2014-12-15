@@ -12,7 +12,7 @@
     <ul class="nav navbar-nav">
         <li><a href="index_admin.jsp">Home</a></li>
         <li><a href="course_view.jsp">Manage Course</a></li>
-        <li><a href="course_advertise.jsp">Advertise Course</a></li>
+        <li><a href="advertise_view.jsp">Advertise Course</a></li>
         <li><a href="generateCertificate.jsp">Generate Certificate</a></li>
         <li><a href="generateReport.jsp">Generate Report</a></li>
         <li><a href="applyForCOurse_verify.jsp">Verify Application</a></li>
