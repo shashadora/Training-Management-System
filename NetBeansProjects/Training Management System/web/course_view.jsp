@@ -16,9 +16,9 @@
         <table class="table table-striped table-advance table-hover">
             <thead>
                 <tr>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Course Code</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Title</th>
-                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>Dean Approval</th>
+                    <th class="hidden-phone"><i class="fa fa fa-barcode"></i>  Course Code</th>
+                    <th class="hidden-phone"><i class="fa fa-question-circle"></i>  Title</th>
+                    <th class="hidden-phone"><i class="fa fa-check-square-o"></i>  Dean Approval</th>
                     <th></th>
                 </tr>
             </thead>

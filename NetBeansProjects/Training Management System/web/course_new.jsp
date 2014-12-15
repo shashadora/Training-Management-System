@@ -58,7 +58,7 @@
                 </div>
                 <div class="form-group">
                      
-                    <label for="code">Module</label>
+                    <label for="module">Module</label>
                     <div class="input-group">
                         <textarea type="text" name="module"
                              style="width:200%;height:200px;"
