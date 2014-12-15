@@ -14,7 +14,7 @@
         <li><a href="course_view.jsp">Manage Course</a></li>
         <li><a href="advertise_view.jsp">Advertise Course</a></li>
         <li><a href="certificate_view.jsp">Generate Certificate</a></li>
-        <li><a href="generateReport.jsp">Generate Report</a></li>
+        <li><a href="report_view.jsp">Generate Report</a></li>
         <li><a href="applyForCOurse_verify.jsp">Verify Application</a></li>
         <li><a href="attendance_view.jsp">View Attendance</a></li>
     </ul>
