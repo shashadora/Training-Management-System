@@ -41,8 +41,8 @@
                         out.println("<td>"+ courses_rs.getString("dean_approval")+"</td>");
                         String course_id = courses_rs.getString("id");
                         out.println("<td>");
-                            out.println("<button class='btn btn-info'><a href='course_edit.jsp?id="+course_id+"'>Edit</a><i class='fa fa-edit'></i></button>");
-                            out.println("<button class='btn btn-warning'><a href='course_delete.jsp?id="+course_id+"'>Delete</a><i class='fa fa-trash'></i></button>");
+                            out.println("<button class='btn btn-info'><i class='fa fa-edit'></i><a href='course_edit.jsp?id="+course_id+"'>Edit</a></button>");
+                            out.println("<button class='btn btn-warning'><i class='fa fa-trash-o'></i><a href='course_delete.jsp?id="+course_id+"'>Delete</a></button>");
                         out.println("</td>");
                     out.println("</tr>");
                 }
@@ -52,7 +52,7 @@
 %>
             </tbody>
         </table>
-        <a href="new.jsp"><button class="btn btn-primary"  type="submit">Add New Course </button></a>
+        <a href="course_new.jsp"><button class="btn btn-primary"  type="submit">Add New Course </button></a>
         </div>    
             
                                    

@@ -20,7 +20,7 @@
 		System.err.println("SQLException: " + ex.getMessage() );
 	}
     if (i > 0) {
-            response.sendRedirect("courses.jsp");
+            response.sendRedirect("course_view.jsp");
         } 
     }
 %>

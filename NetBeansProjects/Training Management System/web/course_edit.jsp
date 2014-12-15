@@ -1,5 +1,7 @@
 <%@include file = "check_session.jsp" %>
+<%@include file="bootstrap.jsp" %>
 <%@include file = "dbConnect.jsp" %>
+<%@include file = "header_admin.jsp" %>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -52,17 +54,40 @@
                 code = i.getString("code");
                 module = i.getString("module");
                 %>
-        <form action="">
-            <input name="id" value="<% out.println(id); %>" type="hidden">
-            Course code : <input type="text" name="code" value="<% out.println(code); %>"> <br>
-            Title : <input type="text" name="title" value="<% out.println(title); %>"> <br>
-            Module : 
-            <textarea type="text" name="module"
-                      style="width:100%;height:300px;"
-                      ><% out.println(module); %></textarea>
- <br>
-            <input type="submit" value="Save">
-        </form>      
+        <div class="container-fluid">
+            <div class="row">
+            <form action="">
+                <input name="id" value="<% out.println(id); %>" type="hidden">
+                <div class="col-lg-10">
+                <div class="form-group">
+                    <label for="code">Course Code</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="code" value="<% out.println(code); %>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <div class="input-group">
+                        <textarea type="text" name="title"
+                             style="width:200%;height:30px;"
+                        ><% out.println(title); %></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                     
+                    <label for="code">Module</label>
+                    <div class="input-group">
+                        <textarea type="text" name="module"
+                             style="width:200%;height:200px;"
+                        ><% out.println(module); %></textarea>
+                    </div>
+                </div>
+                <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary pull-left">
+            </div>
+        </form>
+        </div>
+        </div>
+                    
                 <%
 	} catch (SQLException ex) {
 		out.println("SQLException: " + ex.getMessage() );
