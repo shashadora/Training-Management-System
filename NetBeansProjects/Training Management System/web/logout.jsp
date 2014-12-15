@@ -7,5 +7,5 @@
 <%
 session.setAttribute("username", null);
 session.invalidate();
-response.sendRedirect("index.html");
+response.sendRedirect("login.jsp");
 %>

@@ -1,18 +1,17 @@
-<%-- 
-    Document   : show
-    Created on : Dec 9, 2014, 8:44:56 AM
-    Author     : akob
---%>
-<%@include file = "../dbConnect.jsp" %>
+
+<%@include file = "header_headOfDepartment.jsp" %>
+<%@include file = "dbConnect.jsp" %>
+<%@include file="bootstrap.jsp" %>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Module Details</title>
     </head>
     <body>
+        <div class="container-fluid">
         <h1>Course detail</h1>
         <table>
         <%
@@ -38,11 +37,11 @@
 
         %>
         </table>
-        
+        </div>
         <script>
             function areYouSure(){
                 if (confirm("Are you sure you want to verify")){
-                  window.location = 'verify.jsp?id=<% out.print(request.getParameter("id")); %>';  
+                  window.location = 'module_verify.jsp?id=<% out.print(request.getParameter("id")); %>';  
                 }
                 return;
             }

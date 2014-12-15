@@ -10,16 +10,11 @@
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact Us</a></li>
+        <li><a href="index_trainer.jsp">Home</a></li>
+        <li><a href="attendance_record.jsp">Record Attendance</a></li>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-        <li><a><%
-            if (session.getAttribute("name") != null){
-                out.println( session.getAttribute("name") );
-            }
-        %></a></li>
+       <ul class="nav navbar-nav navbar-right">
+     
     </ul>
   </div>
 </div>

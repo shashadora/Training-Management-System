@@ -1,4 +1,7 @@
 <%@include file = "header.jsp" %>
+<%@include file = "dbConnect.jsp" %>
+<%@page import="java.sql.PreparedStatement"%>
+
 <%@ include file = "bootstrap.jsp" %>
 <html>
     <head>
@@ -7,6 +10,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <%
+            if (request.getParameter("username") != null){
+                     	PreparedStatement register = null;
+                String queryString = "select * from user where userName = ? and password = ?";
+		register = con.prepareStatement(queryString);
+                register.setString(1, request.getParameter("username"));
+                register.setString(2, request.getParameter("password"));
+                ResultSet courses_rs = register.executeQuery();
+                if (courses_rs.first()){
+                    out.println("Welcome ");
+                    session.setAttribute( "name", courses_rs.getString("firstName") + " " + courses_rs.getString("lastName") );
+                    out.println( session.getAttribute( "name" ) + "! ");
+                } else {
+                    out.println("no password match");
+                }   
+            }
+            %>
             <div class="container-fluid">    
         <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
@@ -19,7 +39,7 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form id="loginform" class="form-horizontal" role="form">
+                        <form id="loginform" class="form-horizontal" role="form" action="" method="post">
                                     
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -46,7 +66,7 @@
                                     <!-- Button -->
 
                                     <div class="col-sm-12 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login  </a>
+                                        <input id="btn-login" type="submit" value="Login" class="btn btn-success">
                                     </div>
                                 </div>
 

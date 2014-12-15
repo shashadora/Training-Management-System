@@ -1,9 +1,5 @@
-<%-- 
-    Document   : CourseForm
-    Created on : Nov 25, 2014, 9:54:27 AM
-    Author     : user8
---%>
- <%@include file = "bootstrap.jsp" %>
+<%@include file="header_staff.jsp" %>
+<%@include file = "bootstrap.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,10 +14,8 @@
     
     <div class="container-fluid">
     <div class="row">
-        <div class="page-header">
-        <h1>Course Information</h1>
-        </div>
-         <form method="post" action="Registration.jsp">
+        <h2 align="center">Course Information</h2>
+         <form method="post" action="">
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="courseCode">Course code</label>

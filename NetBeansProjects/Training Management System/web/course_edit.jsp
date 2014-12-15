@@ -1,10 +1,5 @@
-<%-- 
-    Document   : new
-    Created on : Dec 2, 2014, 10:22:24 AM
-    Author     : akob
---%>
-
-<%@include file = "../dbConnect.jsp" %>
+<%@include file = "check_session.jsp" %>
+<%@include file = "dbConnect.jsp" %>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -36,7 +31,7 @@
                 
                 int courses_rs = register.executeUpdate();
                 if (courses_rs > 0){
-                    out.println("<script>window.location = '/Training_Management_System/courses_courses.jsp'; </script>");
+                    out.println("<script>window.location = '/Training_Management_System/course_view.jsp'; </script>");
                 }        
     }
 
