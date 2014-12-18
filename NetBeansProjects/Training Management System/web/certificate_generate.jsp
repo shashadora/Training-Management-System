@@ -30,7 +30,15 @@
             String name = rs.getString("FirstName") + " " + rs.getString("LastName");
             String IC = rs.getString("IC");
             String course = rs.getString("course");
-                               
+            
+            sqlQuery = "SELECT * FROM course_schedule WHERE course_code='"+ course +"'";
+                queryStmt = con.createStatement();
+                rs = queryStmt.executeQuery(sqlQuery);
+     while (rs.next())
+        {
+            
+            String date = rs.getString("start_date")+ "-" + rs.getString("end_date");
+            String place = rs.getString("place");
 %>
 
                          <div class="all_certificate">
@@ -50,8 +58,9 @@
                                                 <p>&nbsp;</p>
                                                 <p>pada</p>
                                                 <p>&nbsp;</p>
-                                                <p><b>13-15 NOVEMBER 2014</b></p>
+                                                <p><b>pada  <%=date%></b></p>
                                                 <p>&nbsp;</p>
+                                                <p><b>di <%=place%></b></p>
                                                 <p>&nbsp;</p>
                                                 <p>KETUAN JABATAN</p>
                                                 <p> </p>
@@ -63,7 +72,7 @@
               
     </body>
 </html>
-      <% } }
+      <% }} }
                 catch(SQLException sqe)
                 {
                     request.setAttribute("error", sqe);
