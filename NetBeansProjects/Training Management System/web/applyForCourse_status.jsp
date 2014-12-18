@@ -1,6 +1,7 @@
 <%@page import="java.sql.*, java.io.*" %>
 <%@include file="header_staff.jsp" %>
 <%@include file = "bootstrap.jsp" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
@@ -154,7 +155,7 @@
 	</div>
 
 </body>
->>>>>>> 67390c9460b8bfbc6881f284a1ed8d363efb18fb
+
 </html>
 
 <%!
