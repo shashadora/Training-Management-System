@@ -46,7 +46,7 @@
                         out.println("<td>"+ dean_approval +"</td>");
                         String course_id = courses_rs.getString("id");
                         out.println("<td>");
-                            out.println("<button class='btn btn-info'><a href='module_show.jsp?id="+course_id+"'>View</a><i class='fa fa-question'></i></button>");
+                            out.println("<button class='btn btn-info'><a href='module_show.jsp?id="+course_id+"'>View</a></button>");
                         out.println("</td>");
                     out.println("</tr>");
                 }
