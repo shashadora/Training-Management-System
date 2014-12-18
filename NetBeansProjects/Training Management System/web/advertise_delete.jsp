@@ -11,7 +11,7 @@
 	try {
         	PreparedStatement register = null;
         	int updateQuery = 0;
-                String queryString = "delete from courses where id = ?";
+                String queryString = "delete from course_schedule where id = ?";
 		register = con.prepareStatement(queryString);
 		register.setString(1, id);
 				
@@ -20,7 +20,7 @@
 		System.err.println("SQLException: " + ex.getMessage() );
 	}
     if (i > 0) {
-            response.sendRedirect("course_view.jsp");
+            response.sendRedirect("advertise_view.jsp");
         } 
     }
 %>

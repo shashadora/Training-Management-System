@@ -8,9 +8,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-
-<script language="javascript" type="text/javascript" src="js/datetimepicker.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+  <script src="js/jquery-1.11.0.js"></script>
+  <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#to" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 1,
+      onClose: function( selectedDate ) {
+        $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+  });
+  </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Advertisment</title>
     </head>
@@ -19,33 +40,36 @@
             <h3 align="center">Advertise New Course</h3>
         <%
             String course_code = request.getParameter("course_code");    
-            String start_time = request.getParameter("start_time");
-            String end_time = request.getParameter("end_time");
+            String start_date = request.getParameter("start_date");
+            String end_date = request.getParameter("end_date");
             String place = request.getParameter("place");
-           
-            out.println(start_time);
-    int i = 0;
-    if(course_code != null && start_time != null && end_time !=null &&  place != null)
+
+    if(course_code != null && start_date != null && end_date !=null &&  place != null)
     {
+        
 	try {
         	PreparedStatement register = null;
         	int updateQuery = 0;
-                String queryString = "INSERT INTO course_schedule(course_code, start_time, end_time, place) VALUES (?, ?, ?)";
+                
+                String queryString = "INSERT INTO course_schedule(course_code, place, start_date, end_date) VALUES (?,?, ?, ?)";
 		register = con.prepareStatement(queryString);
 		register.setString(1, course_code);
-		register.setString(2, start_time);
-		register.setString(3, end_time);
-                register.setString(4, place);
-		out.println(course_code);		
-                i = register.executeUpdate();
-                out.println(i);
+		register.setString(2, place);
+                register.setString(3, start_date);
+		register.setString(4, end_date);
+                
+				
+               int i = register.executeUpdate();
+                out.println(place);
+                    if (i > 0) {
+
+                response.sendRedirect("advertise_view.jsp");
+            } 
 	} catch (SQLException ex) {
 		System.err.println("SQLException: " + ex.getMessage() );
 	}
-    if (i > 0) {
+        
 
-       response.sendRedirect("advertise_view.jsp");
-    } 
     }
         %>
         <div class="container-fluid">
@@ -61,16 +85,16 @@
                 
                 <div class="form-group">
                      
-                    <label for="start_time">Start Time</label>
+                    <label for="start_date">Start Date</label>
                     <div class="input-group">
-                       <input name="start_time" type="text" size="25"><a href="javascript:NewCal('start_time','ddmmmyyyy',true,12)"><img src="img/cal.gif" width="16" height="16" border="0"></a>
+                        <input class="form-control" id="from" name="start_date" type="text" required autofocus>
                     </div>
                 </div>
                     <div class="form-group">
                      
-                    <label for="end_time">End Time</label>
+                    <label for="end_date">End Date</label>
                     <div class="input-group">
-                       <input name="end_time" type="text" size="25"><a href="javascript:NewCal('end_time','ddmmmyyyy',true,12)"><img src="img/cal.gif" width="16" height="16" border="0"></a>
+                       <input class="form-control" id="to" name="end_date" type="text" required autofocus>
                     </div>
                 </div>
                 <div class="form-group">
