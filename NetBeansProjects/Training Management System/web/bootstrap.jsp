@@ -13,5 +13,9 @@
         <!-- Custom styles for this template -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/style-responsive.css" rel="stylesheet">
-        <script src="js/jquery-1.11.0.js" type="text/JavaScript" language="javascript"></script>
+
+        <link href="https://gitcdn.github.io/bootstrap-toggle/2.0.0/css/bootstrap-toggle.min.css" rel="stylesheet">
+        <script src="https://gitcdn.github.io/bootstrap-toggle/2.0.0/js/bootstrap-toggle.min.js"></script>
+
+        <script src="js/jquery.js"></script>
         <script src="js/jquery.printarea.js" type="text/JavaScript" language="javascript"></script>

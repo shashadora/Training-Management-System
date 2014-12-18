@@ -1,24 +1,24 @@
-<%@include file="header_staff.jsp" %>
-<%@include file = "bootstrap.jsp" %>
+<%@include file = "check_session.jsp" %>
+<%@include file="bootstrap.jsp" %>
 <%@include file = "dbConnect.jsp" %>
+<%@include file = "header_admin.jsp" %>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Apply Course Form</title>
-</head>
-<body>
-    
-           <div class="container-fluid">
-        <h1>Course Information </h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Advertise Courses</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+        <h1>Advertise Courses </h1>
         <table class="table table-striped table-advance table-hover">
             <thead>
                 <tr>
                     <th class="hidden-phone"><i class="fa fa-barcode"></i>  Course Code</th>
-                    <th class="hidden-phone"><i class="fa fa-calendar"></i>  Date</th>
-                    <th class="hidden-phone"><i class="fa fa-clock-o"></i>  Start Time</th>
-                    <th class="hidden-phone"><i class="fa fa-clock-o"></i>  End Time</th>
+                    <th class="hidden-phone"><i class="fa fa-calendar"></i>Start Date</th>
+                    <th class="hidden-phone"><i class="fa fa-calendar"></i>  End Date</th>
                      <th class="hidden-phone"><i class="fa fa-building-o"></i>  Places</th>
                     <th></th>
                    
@@ -39,13 +39,13 @@
                 while (courses_rs.next()) {
                     out.println("<tr>");
                         out.println("<td>"+ courses_rs.getString("course_code")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("date")+"</td>");
+                        out.println("<td>"+ courses_rs.getString("start_date")+"</td>");
+                        out.println("<td>"+ courses_rs.getString("end_date")+"</td>");
                         out.println("<td>"+ courses_rs.getString("place")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("start_time")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("end_time")+"</td>");
-                        String course_id = courses_rs.getString("id");
+                        String id = courses_rs.getString("id");
                         out.println("<td>");
-                            out.println("<button class='btn btn-info'><i class='fa fa-pencil'></i><a href='applyForCourse_apply.jsp?id="+course_id+"'>Apply</a></button>");
+                            out.println("<button class='btn btn-info'><i class='fa fa-edit'></i><a href='advertise_edit.jsp?id="+id+"'>Edit</a></button>");
+                            out.println("<button class='btn btn-warning'><i class='fa fa-trash-o'></i><a href='advertise_delete.jsp?id="+id+"'>Delete</a></button>");
                         out.println("</td>");
                     out.println("</tr>");
                 }
@@ -53,4 +53,11 @@
 		System.err.println("SQLException: " + ex.getMessage() );
 	} 
 %>
+            </tbody>
+        </table>
+        <a href="advertise_new.jsp"><button class="btn btn-primary"  type="submit">Advertise New Course </button></a>
+        </div>    
+            
+                                   
+    </body>
 </html>

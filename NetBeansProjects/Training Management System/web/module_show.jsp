@@ -31,7 +31,7 @@
                                 + "<td valign=top>MODULE</td> <td valign=top>:</td> <td><pre>"+ courses_rs.getString("module") +" </pre></td>"
                                 + "</tr>"
                                 + "<tr> "
-                                + "<td colspan=3> <a onClick=areYouSure();return; href='#'>Verify</a> </td>"
+                                + "<td colspan=3><button class='btn btn-info'><a onClick=areYouSure();return; href='#'>Verify</a></button></td>"
                                 + "</tr>");                    
                 }
 

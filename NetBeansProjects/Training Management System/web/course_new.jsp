@@ -36,11 +36,11 @@
 	}
     if (i > 0) {
 
-       response.sendRedirect("courses.jsp");
+       response.sendRedirect("course_view.jsp");
     } 
     }
         %>
-        <div class="container">
+        <div class="container-fluid">
     <div class="row">
             <form action="">
                 <div class="col-lg-6">
@@ -57,9 +57,12 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="code">Module</label>
+                     
+                    <label for="module">Module</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" name="module">
+                        <textarea type="text" name="module"
+                             style="width:200%;height:200px;"
+                        ></textarea>
                     </div>
                 </div>
                 <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-primary pull-left">
