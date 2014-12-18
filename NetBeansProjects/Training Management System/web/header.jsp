@@ -20,6 +20,13 @@
                 out.println( session.getAttribute("name") );
             }
         %></a></li>
+        <%
+            if (session.getAttribute("name") != null){ %>
+        <li>
+            
+            <a href='logout.jsp'>Logout</a> 
+        </li>
+        <% } %>
     </ul>
   </div>
 </div>

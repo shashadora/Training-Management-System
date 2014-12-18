@@ -1,5 +1,5 @@
 
-<%@include file= "adminHeader.jsp" %>
+<%@include file= "header_admin.jsp" %>
 <%@include file= "bootstrap.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
                                   
                                   
                                   <td>
-                                      <button class="btn btn-info">
+                                      <button class="btn btn-info generate_certificate">
                                         <%--<a href='salaryUpdate.jsp?salaryID= + <%=salaryID%> + '>--%> 
                                         <i class="fa fa-edit"></i>  Generate Certificate</button>
                                       
@@ -48,6 +48,84 @@
                               </tr>
                               </tbody>
                           </table>
+                                        
+                                        <div class="all_certificate">
+                                            <div class="each_certificate" style="page-break-after:always;">
+                                                <center>
+                                                <h1>Sijil Penyertaan</h1>
+                                                <p>&nbsp;</p>
+                                                <p>&nbsp;</p>
+                                                <p>Adalah dengan ini diperakui bahawa</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>AHMAD YA'KOB BIN ABAIDULLAH</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>telah menyertai</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>Ruby on Rails Crash Course Training</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>pada</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>13-15 NOVEMBER 2014</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>KETUAN JABATAN</p>
+                                                </center>
+                                            </div>
+                                            
+                                            <div class="each_certificate" style="page-break-after:always;">
+                                                <center>
+                                                <h1>Sijil Penyertaan</h1>
+                                                <p>&nbsp;</p>
+                                                <p>&nbsp;</p>
+                                                <p>Adalah dengan ini diperakui bahawa</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>Rodza bin Wahab</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>telah menyertai</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>Ruby on Rails Crash Course Training</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>pada</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>13-15 NOVEMBER 2014</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>KETUAN JABATAN</p>
+                                                </center>
+                                            </div>
+                                            
+                                            <div class="each_certificate" style="page-break-after:always;">
+                                                <center>
+                                                <h1>Sijil Penyertaan</h1>
+                                                <p>&nbsp;</p>
+                                                <p>&nbsp;</p>
+                                                <p>Adalah dengan ini diperakui bahawa</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>Fakhitah Ridzuan</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>telah menyertai</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>Ruby on Rails Crash Course Training</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>pada</p>
+                                                <p>&nbsp;</p>
+                                                <p><b>13-15 NOVEMBER 2014</b></p>
+                                                <p>&nbsp;</p>
+                                                <p>KETUAN JABATAN</p>
+                                                </center>
+                                            </div>
+                                            
+                                        </div>
+                                        </center>
         </div>
     </body>
 </html>
+<style>
+    .each_certificate {
+        page-break-after: always;
+        text-align: center;
+    }
+</style>
+<script>
+    $(".generate_certificate").click(function(){
+        $(".all_certificate").printArea()
+    })
+</script>

@@ -13,8 +13,19 @@
         <li><a href="index_trainer.jsp">Home</a></li>
         <li><a href="attendance_record.jsp">Record Attendance</a></li>
     </ul>
-       <ul class="nav navbar-nav navbar-right">
-     
+    <ul class="nav navbar-nav navbar-right">
+        <li><a><%
+            if (session.getAttribute("name") != null){
+                out.println( session.getAttribute("name") );
+            }
+        %></a></li>
+        <%
+            if (session.getAttribute("name") != null){ %>
+        <li>
+            
+            <a href='logout.jsp'>Logout</a> 
+        </li>
+        <% } %>
     </ul>
   </div>
 </div>

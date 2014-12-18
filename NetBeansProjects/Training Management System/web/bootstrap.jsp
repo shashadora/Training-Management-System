@@ -13,4 +13,5 @@
         <!-- Custom styles for this template -->
         <link href="css/style.css" rel="stylesheet">
         <link href="css/style-responsive.css" rel="stylesheet">
-        
+        <script src="js/jquery-1.11.0.js" type="text/JavaScript" language="javascript"></script>
+        <script src="js/jquery.printarea.js" type="text/JavaScript" language="javascript"></script>

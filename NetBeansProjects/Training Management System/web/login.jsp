@@ -11,6 +11,12 @@
     </head>
     <body>
         <%
+//        user level according to user.level column
+//        0 = admin
+//        1 = HOD
+//        2 = Trainer
+//        3 = staff
+        
             if (request.getParameter("username") != null){
                      	PreparedStatement register = null;
                 String queryString = "select * from user where userName = ? and password = ?";
@@ -21,6 +27,21 @@
                 if (courses_rs.first()){
                     out.println("Welcome ");
                     session.setAttribute( "name", courses_rs.getString("firstName") + " " + courses_rs.getString("lastName") );
+                    session.setAttribute( "level", courses_rs.getString("level") );
+                    switch ( Integer.parseInt( session.getAttribute("level").toString() ) ){
+                        case 0: // Admin
+                            response.sendRedirect("course_view.jsp");
+                            break;
+                        case 1: // HOD
+                            response.sendRedirect("module.jsp");
+                            break;
+                        case 2: 
+                            response.sendRedirect("attendance_record.jsp");
+                            break;                            
+                        case 3:
+                            response.sendRedirect("applyForCourse_available_course.jsp");
+                            break;                            
+                     }
                     out.println( session.getAttribute( "name" ) + "! ");
                 } else {
                     out.println("no password match");

@@ -18,8 +18,19 @@
         <li><a href="applyForCOurse_verify.jsp">Verify Application</a></li>
         <li><a href="attendance_view.jsp">View Attendance</a></li>
     </ul>
-       <ul class="nav navbar-nav navbar-right">
-     
+    <ul class="nav navbar-nav navbar-right">
+        <li><a><%
+            if (session.getAttribute("name") != null){
+                out.println( session.getAttribute("name") );
+            }
+        %></a></li>
+        <%
+            if (session.getAttribute("name") != null){ %>
+        <li>
+            
+            <a href='logout.jsp'>Logout</a> 
+        </li>
+        <% } %>
     </ul>
   </div>
 </div>
