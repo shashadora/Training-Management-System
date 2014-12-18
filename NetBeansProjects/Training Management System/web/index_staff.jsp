@@ -1,24 +1,19 @@
-<%@include file = "staffHeader.jsp" %>
-<%@ include file = "bootstrap.jsp" %>
+<%@include file ="header_staff.jsp" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Index</title>
     </head>
     <body>
-        <div class="container-fluid">    
-        
-        <jsp:useBean id="user" class="coreservlets.loginBean">
-            
-        </jsp:useBean>
-        <jsp:setProperty name="user" property="*"></jsp:setProperty>
-        <CENTER>
-            <h3>Welcome <jsp:getProperty name="user" property="uname"></jsp:getProperty> <BR/>
+        <div class="container-fluid">
+            <h3 align="center">
+                <%
+                    out.println("Welcome ");
+                    out.println( session.getAttribute( "name" ) + "! ");
+                %>
             </h3>
-        </CENTER>
-
         </div>
-    
     </body>
 </html>
