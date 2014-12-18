@@ -39,6 +39,7 @@
         {
             index++;
             String ID = rs.getString("ID");
+            
             String name = rs.getString("FirstName") + " " + rs.getString("LastName");
             String IC = rs.getString("IC");
             String course = rs.getString("course");
