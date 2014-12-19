@@ -43,22 +43,44 @@
                     index++;
                     out.println("<tr>");
                         out.println("<td>"+ index+"</td>");
-                        out.println("<td>"+ rs.getString("FirstName") + " " +rs.getString("LastName")+"</td>");
+                        out.println("<td>"+ rs.getString("name")+"</td>");
                         
                         String id = rs.getString("ID");
                %>                     <td>
-                                        <input type="checkbox" name="attendance" checked data-toggle="toggle" data-on="Yes" value-on="Yes" data-off="No" value-off="No" data-onstyle="primary" data-offstyle="danger">
+                                  <input type="checkbox" name="attendance[]" checked data-toggle="toggle" data-on="Yes" value=<%=id%> data-off="No"  data-onstyle="primary" data-offstyle="danger">
                                       </td>
                                   
-                              </tr>
-                 <%} } catch (SQLException ex) {
+                              </tr> <%
+                    } } catch (SQLException ex) {
 		System.err.println("SQLException: " + ex.getMessage() );
 	}             %>
+
                               </tbody>
                           </table>
                               
     <button class="btn btn-primary"  type="submit">Submit</button>
     </form>
+                                                      
+                <% 
+                if (request.getParameterValues("attendance[]")!= null)
+                {
+                    PreparedStatement register = null;
+                
+        	int i =0;
+                String [] ids = request.getParameterValues("attendance[]");
+                 for (String id:ids){
+                      String queryString = "update participant set attendance='true' WHERE id='"+id+"'";
+                        register = con.prepareStatement(queryString);
+                        
+                         i = register.executeUpdate();
+                
+                 } 
+               if (i > 0) {
+
+                response.sendRedirect("attendance_view.jsp");
+            } 
+               }
+                 %>
             </div>
     </body>
  
