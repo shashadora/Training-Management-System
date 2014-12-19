@@ -16,9 +16,9 @@
             <thead>
                 <tr>
                     <th class="hidden-phone"><i class="fa fa-barcode"></i>  Course Code</th>
-                    <th class="hidden-phone"><i class="fa fa-calendar"></i>  Date</th>
-                    <th class="hidden-phone"><i class="fa fa-clock-o"></i>  Start Time</th>
-                    <th class="hidden-phone"><i class="fa fa-clock-o"></i>  End Time</th>
+                    <th class="hidden-phone"><i class="fa fa-calendar"></i> Start Date</th>
+                    <th class="hidden-phone"><i class="fa fa-calendar"></i> End Date</th>
+                    
                      <th class="hidden-phone"><i class="fa fa-building-o"></i>  Places</th>
                     <th></th>
                    
@@ -39,11 +39,11 @@
                 while (courses_rs.next()) {
                     out.println("<tr>");
                         out.println("<td>"+ courses_rs.getString("course_code")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("date")+"</td>");
+                        out.println("<td>"+ courses_rs.getString("start_date")+"</td>");
+                        
+                        out.println("<td>"+ courses_rs.getString("end_date")+"</td>");
                         out.println("<td>"+ courses_rs.getString("place")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("start_time")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("end_time")+"</td>");
-                        String course_id = courses_rs.getString("id");
+                        String course_id = courses_rs.getString("course_code");
                         out.println("<td>");
                             out.println("<button class='btn btn-info'><i class='fa fa-pencil'></i><a href='applyForCourse_apply.jsp?id="+course_id+"'>Apply</a></button>");
                         out.println("</td>");

@@ -1,11 +1,12 @@
+<%@include file="header_staff.jsp" %>
+<%@include file = "bootstrap.jsp" %>
 <%@include file = "dbConnect.jsp" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Apply Job</title>
+        <title>Apply Course</title>
     </head>
     <body>
     </body>
@@ -13,23 +14,26 @@
 
 <%
     PreparedStatement apply = null;
-    String user = (String)session.getAttribute("name");
-    
+   String name =(String) session.getAttribute ("name");
     int i = 0;
-    String jobID = request.getParameter("JobID");
-    String ID = "SELECT *FROM user where username = '"+user+"'";
+    
+    String course = request.getParameter("id");
+    String ID = "SELECT *FROM courses where title = '"+course+"'";
+     
     rs = queryStmt.executeQuery(ID);
                 while (rs.next()) {
+                     out.println(course);  
                 String userID = rs.getString(1);
-                
-        if(jobID!=null)
+            
+        if(course!=null)
             {//
                 try
                 {
-                    String query = "INSERT INTO jobapplication(JobID, userID) VALUES (?,?)";
+                        String query = "INSERT INTO participant(course, name) VALUES (?,?)";
                     apply = con.prepareStatement(query);
-                    apply.setString(1, jobID);
-                    apply.setString(2, userID);
+                    apply.setString(1, course);
+                    apply.setString(2, name);
+                    
                     i = apply.executeUpdate();
                 }
                 
@@ -41,10 +45,10 @@
             }
                 if (i > 0) {
         
-                    response.sendRedirect("ApplySuccess.jsp");
+                    response.sendRedirect("index_staff.jsp");
        
                 } else {
-                    response.sendRedirect("jobSearch.jsp");
+                    response.sendRedirect("applyForCourse_new.jsp");
                 }
             }       
 %>  
