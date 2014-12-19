@@ -27,8 +27,7 @@
         {
             index++;
             String ID = rs.getString("ID");
-            String name = rs.getString("FirstName") + " " + rs.getString("LastName");
-            String IC = rs.getString("IC");
+            String name = rs.getString("name");
             String course = rs.getString("course");
             
             sqlQuery = "SELECT * FROM course_schedule WHERE course_code='"+ course +"'";
@@ -50,8 +49,6 @@
                                                 <p>Adalah dengan ini diperakui bahawa</p>
                                                 <p>&nbsp;</p>
                                                 <p><b><%=name%></b></p>
-                                                <p><b><%=IC%></b></p>
-                                                <p>&nbsp;</p>
                                                 <p>telah menyertai</p>
                                                 <p>&nbsp;</p>
                                                 <p><b><%=course%></b></p>
@@ -62,6 +59,8 @@
                                                 <p>&nbsp;</p>
                                                 <p><b>di <%=place%></b></p>
                                                 <p>&nbsp;</p>
+                                                <p>&nbsp;</p>
+                                                <p>.....................</p>
                                                 <p>KETUAN JABATAN</p>
                                                 <p> </p>
                                                 </center>

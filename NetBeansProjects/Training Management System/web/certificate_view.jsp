@@ -13,7 +13,7 @@
         try
                 {
    
-                String sqlQuery = "SELECT * FROM participant";
+                String sqlQuery = "SELECT * FROM participant WHERE attendance='true'";
                 queryStmt = con.createStatement();
                 rs = queryStmt.executeQuery(sqlQuery);
                
@@ -27,7 +27,6 @@
                               <tr>
                                   <th><i class="fa fa-bullhorn"></i> Index</th>
                                   <th class="hidden-phone"><i class="fa fa-user"></i> Name</th>
-                                  <th class="hidden-phone"><i class="fa fa-credit-card"></i> I/C</th>
                                   <th class="hidden-phone"><i class="fa fa-question-circle"></i> Course</th>
                                   <th class="hidden-phone"><i class="fa fa-mortar-board">Generate Certificate</th>
                               </tr>
@@ -40,8 +39,7 @@
             index++;
             String ID = rs.getString("ID");
             
-            String name = rs.getString("FirstName") + " " + rs.getString("LastName");
-            String IC = rs.getString("IC");
+            String name = rs.getString("name");
             String course = rs.getString("course");
                                
 %>
