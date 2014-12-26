@@ -14,26 +14,22 @@
 
 <%
     PreparedStatement apply = null;
-   String name =(String) session.getAttribute ("name");
+   String user_ID =(String) session.getAttribute ("ID");
     int i = 0;
     
-    String course = request.getParameter("id");
-    String ID = "SELECT *FROM courses where title = '"+course+"'";
-     
-    rs = queryStmt.executeQuery(ID);
-                while (rs.next()) {
-                     out.println(course);  
-                String userID = rs.getString(1);
+    String schedule_ID = request.getParameter("id");
+    
             
-        if(course!=null)
-            {//
+                   
+        if(schedule_ID!=null)
+            {// 
+               
                 try
                 {
-                        String query = "INSERT INTO participant(course, name) VALUES (?,?)";
+                    String query = "INSERT INTO participant(schedule_ID, user_ID) VALUES (?,?)";
                     apply = con.prepareStatement(query);
-                    apply.setString(1, course);
-                    apply.setString(2, name);
-                    
+                    apply.setString(1, schedule_ID);
+                    apply.setString(2, user_ID);
                     i = apply.executeUpdate();
                 }
                 
@@ -45,11 +41,11 @@
             }
                 if (i > 0) {
         
-                    response.sendRedirect("index_staff.jsp");
+                    response.sendRedirect("applyForCourse_status.jsp");
        
                 } else {
                     response.sendRedirect("applyForCourse_new.jsp");
                 }
-            }       
+                 
 %>  
 

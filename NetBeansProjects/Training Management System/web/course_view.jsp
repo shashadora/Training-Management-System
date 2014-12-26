@@ -38,7 +38,13 @@
                     out.println("<tr>");
                         out.println("<td>"+ courses_rs.getString("code")+"</td>");
                         out.println("<td>"+ courses_rs.getString("title")+"</td>");
-                        out.println("<td>"+ courses_rs.getString("dean_approval")+"</td>");
+                        if (courses_rs.getString("dean_approval").equals("1")){
+                        out.println("<td>Approved</td>");
+                        }
+                        else
+                        {
+                            out.println("<td>Pending</td>");
+                        }
                         String course_id = courses_rs.getString("id");
                         out.println("<td>");
                             out.println("<button class='btn btn-info'><i class='fa fa-edit'></i><a href='course_edit.jsp?id="+course_id+"'>Edit</a></button>");

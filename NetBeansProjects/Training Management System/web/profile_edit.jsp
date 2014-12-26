@@ -5,7 +5,7 @@
 <%@page import="java.sql.*" %>
 
 
-<%@ include file="Mysql_connect.jsp" %>
+<%@ include file="dbConnect.jsp" %>
 
 <%@ page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -18,7 +18,7 @@
     String lName = request.getParameter("input5");
     String email = request.getParameter("input6");
 
-    String userSession = (String)session.getAttribute("username");    
+    String name = (String)session.getAttribute("firstName");    
     
     int i = 0;
     if(username!=null && pwd!=null && fName!=null && lName!=null && email!=null)
@@ -29,7 +29,7 @@
         	int updateQuery = 0;
 
                 String queryString = "UPDATE user SET username=?,password=?,firstName=?,"
-					+ "lastName=?,email=? WHERE username='" + userSession
+					+ "lastName=?,email=? WHERE firstName='" + name 
 					+ "'"; 
 
                 /* createStatement() is used for create statement object that is used for 
@@ -46,8 +46,8 @@
 		System.err.println("SQLException: " + ex.getMessage() );
 	}
     if (i > 0) {
-        session.setAttribute("username", username);
-        response.sendRedirect("profile.jsp");
+        //session.setAttribute("username", username);
+        response.sendRedirect("profile_view.jsp");
        // out.print("Registration Successfull!"+"<a href='index.jsp'>Go to Login</a>");
     } else {
         out.println("Edit cannot be done because of system error!");

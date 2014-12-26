@@ -6,12 +6,13 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Brand</a>
+    <a class="navbar-brand" href="#">TMS</a>
   </div>
   <div class="navbar-collapse collapse navbar-inverse-collapse">
     <ul class="nav navbar-nav">
         <li><a href="index_headOfDepartment.jsp">Home</a></li>
         <li><a href="module.jsp">Verify Module</a></li>
+        <li><a href="report_view_hod.jsp">View Report</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
         <li><a><%

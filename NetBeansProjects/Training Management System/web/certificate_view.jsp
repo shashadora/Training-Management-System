@@ -37,23 +37,47 @@
         while (rs.next())
         {
             index++;
-            String ID = rs.getString("ID");
+            String user = rs.getString("user_ID");
             
-            String name = rs.getString("name");
-            String course = rs.getString("course");
+            String sql = "SELECT firstName, lastName FROM user WHERE ID ='"+user+"'";
+                queryStmt = con.createStatement();
+                ResultSet rs2=null;
+                rs2 = queryStmt.executeQuery(sql);
+                 while (rs2.next())
+        {
+                      
+            String name = rs2.getString("firstName") + " "+ rs2.getString("lastName");
+            String schedule = rs.getString("schedule_ID");
+            String sql2 = "SELECT * FROM course_schedule WHERE ID ='"+schedule+"'";
+                queryStmt = con.createStatement();
+                ResultSet rs3=null;
+                rs3 = queryStmt.executeQuery(sql2);
+                 while (rs3.next())
+        {
+            String course = rs3.getString("course_ID");
+            String sql3 = "SELECT * FROM courses WHERE id ='"+course+"'";
+                queryStmt = con.createStatement();
+                ResultSet rs4=null;
+                rs4 = queryStmt.executeQuery(sql3);
+                 while (rs4.next())
+        {
+            String title = rs4.getString("title");
+        
+        
                                
 %>
 
 <TR>
 <TD><%=index %></TD>
 <TD><%=name%></TD>
-<TD><%=IC%></TD>
-<TD><%=course%></TD>
+<TD><%=title%></TD>
 <TD><button class="btn btn-social">
-                                        <a href='certificate_generate.jsp?ID= + <%=ID%> + '>
+                                         <a href='certificate_generate.jsp?user_ID= + <%=user%> + '>
                                         <i class="fa fa-download"></i></button></TD>
 </TR>
-<% } }
+<% }
+        }
+        }}}
                 catch(SQLException sqe)
                 {
                     request.setAttribute("error", sqe);

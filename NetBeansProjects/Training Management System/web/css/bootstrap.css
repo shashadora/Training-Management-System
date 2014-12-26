@@ -2350,6 +2350,9 @@ output {
   line-height: 1.42857143;
   color: #555;
 }
+.form-login{
+    background-color: #ff0000;
+}
 .form-control {
   display: block;
   width: 100%;
@@ -2811,8 +2814,8 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #ff0000;
+  border-color: #ff0000;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -2893,8 +2896,8 @@ fieldset[disabled] .btn-success.active {
 }
 .btn-info {
   color: #fff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #F7FE2E;
+  border-color: #F7FE2E;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -4107,7 +4110,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 	color: #ecf0f1;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-	color: #ecdbff;
+	color: #121106;
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #ecdbff;
